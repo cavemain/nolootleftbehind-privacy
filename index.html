@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Privacy Policy – NoLootLeftBehind</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0d0f14;
+      --surface: #13161e;
+      --border: #1f2433;
+      --accent: #e8a020;
+      --accent2: #c75f1b;
+      --text: #d4d8e8;
+      --muted: #6b7290;
+      --heading: #f0f2ff;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-weight: 300;
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+
+    /* Pixel grid background */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(232,160,32,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(232,160,32,0.03) 1px, transparent 1px);
+      background-size: 32px 32px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .page-wrap {
+      position: relative;
+      z-index: 1;
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 60px 24px 100px;
+    }
+
+    /* Header */
+    header {
+      margin-bottom: 56px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .game-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      padding: 6px 14px;
+      border-radius: 2px;
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-family: 'IBM Plex Sans', monospace;
+      margin-bottom: 20px;
+    }
+
+    .game-badge::before {
+      content: '▶';
+      font-size: 8px;
+    }
+
+    h1 {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: clamp(2.2rem, 6vw, 3.6rem);
+      font-weight: 700;
+      color: var(--heading);
+      letter-spacing: 0.02em;
+      line-height: 1.1;
+      margin-bottom: 12px;
+    }
+
+    h1 span {
+      color: var(--accent);
+    }
+
+    .meta {
+      font-size: 13px;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+      font-family: 'IBM Plex Sans', monospace;
+    }
+
+    /* Sections */
+    .section {
+      margin-bottom: 44px;
+      padding: 28px 32px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .section::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 3px;
+      height: 100%;
+      background: linear-gradient(180deg, var(--accent), var(--accent2));
+    }
+
+    .section-num {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    h2 {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--heading);
+      letter-spacing: 0.04em;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+    }
+
+    h3 {
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-weight: 500;
+      font-size: 0.95rem;
+      color: var(--heading);
+      margin: 20px 0 10px;
+      letter-spacing: 0.02em;
+    }
+
+    p {
+      margin-bottom: 12px;
+      font-size: 0.95rem;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    ul {
+      list-style: none;
+      margin: 10px 0 12px;
+    }
+
+    ul li {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 8px;
+      font-size: 0.93rem;
+    }
+
+    ul li::before {
+      content: '›';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    /* Permission tags */
+    .perm-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 12px 0;
+    }
+
+    .perm {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      background: rgba(232,160,32,0.05);
+      border: 1px solid rgba(232,160,32,0.12);
+      border-radius: 3px;
+      padding: 10px 14px;
+    }
+
+    .perm-name {
+      font-family: 'IBM Plex Sans', monospace;
+      font-size: 11px;
+      color: var(--accent);
+      background: rgba(232,160,32,0.1);
+      padding: 2px 8px;
+      border-radius: 2px;
+      white-space: nowrap;
+      letter-spacing: 0.05em;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .perm-desc {
+      font-size: 0.88rem;
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    /* Contact box */
+    .contact-box {
+      background: rgba(232,160,32,0.06);
+      border: 1px solid rgba(232,160,32,0.2);
+      border-radius: 4px;
+      padding: 20px 24px;
+      margin-top: 16px;
+    }
+
+    .contact-row {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 8px;
+      font-size: 0.93rem;
+    }
+
+    .contact-row:last-child { margin-bottom: 0; }
+
+    .contact-label {
+      font-family: 'IBM Plex Sans', monospace;
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      min-width: 80px;
+    }
+
+    .contact-val {
+      color: var(--heading);
+      font-weight: 400;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* Footer */
+    footer {
+      margin-top: 60px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+      font-family: 'IBM Plex Sans', monospace;
+    }
+
+    @media (max-width: 600px) {
+      .page-wrap { padding: 40px 16px 80px; }
+      .section { padding: 22px 20px; }
+      .perm { flex-direction: column; gap: 6px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrap">
+
+    <header>
+      <div class="game-badge">Android App – Privacy Policy</div>
+      <h1>No<span>Loot</span>LeftBehind</h1>
+      <p class="meta">PACKAGE: app.emergent.gamepricecompare &nbsp;|&nbsp; VERSION: 1.0.4 &nbsp;|&nbsp; EFFECTIVE: APRIL 21, 2026</p>
+    </header>
+
+    <div class="section">
+      <span class="section-num">01</span>
+      <h2>Introduction</h2>
+      <p>Welcome to <strong>NoLootLeftBehind</strong>, operated by <strong>Cavemain</strong> ("we," "us," or "our"). This Privacy Policy explains how we collect, use, and protect information when you use our Android application.</p>
+      <p>By downloading and using the App, you agree to the terms described in this Privacy Policy. If you do not agree, please do not use the App.</p>
+    </div>
+
+    <div class="section">
+      <span class="section-num">02</span>
+      <h2>About This App</h2>
+      <p>NoLootLeftBehind is a game price comparison tool that helps users find and compare prices for video games across different platforms and stores. The App does not require user account creation or login.</p>
+    </div>
+
+    <div class="section">
+      <span class="section-num">03</span>
+      <h2>Information We Collect</h2>
+
+      <h3>Information You Provide</h3>
+      <p>The App does not require you to create an account or provide personal information such as your name, email address, or payment details.</p>
+
+      <h3>Automatically Collected Information</h3>
+      <p>To function properly, the App may automatically collect limited technical information, including:</p>
+      <ul>
+        <li>Device information (operating system version, device type)</li>
+        <li>App usage data (features accessed, search queries entered within the App)</li>
+        <li>Network state information (to check internet connectivity)</li>
+      </ul>
+
+      <h3>Permissions Used</h3>
+      <p>The App requests the following Android permissions:</p>
+      <div class="perm-list">
+        <div class="perm"><span class="perm-name">INTERNET</span><span class="perm-desc">Required to fetch game price data from online sources.</span></div>
+        <div class="perm"><span class="perm-name">NETWORK_STATE</span><span class="perm-desc">Used to check whether an internet connection is available before making network requests.</span></div>
+        <div class="perm"><span class="perm-name">NOTIFICATIONS</span><span class="perm-desc">Used to send you optional notifications (e.g., price drop alerts, if enabled).</span></div>
+        <div class="perm"><span class="perm-name">STORAGE</span><span class="perm-desc">Used to store app data or cache locally on your device (limited to older Android versions as required).</span></div>
+        <div class="perm"><span class="perm-name">BOOT_COMPLETED</span><span class="perm-desc">Used to restart scheduled notifications after your device reboots.</span></div>
+        <div class="perm"><span class="perm-name">ALERT_WINDOW</span><span class="perm-desc">May be used to display overlay content on supported devices.</span></div>
+        <div class="perm"><span class="perm-name">VIBRATE / WAKE</span><span class="perm-desc">Used to support notification delivery.</span></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <span class="section-num">04</span>
+      <h2>How We Use Information</h2>
+      <p>We use the information collected to:</p>
+      <ul>
+        <li>Provide and improve the App's core price comparison functionality</li>
+        <li>Display relevant game pricing and availability information</li>
+        <li>Send notifications if you have opted in to alerts</li>
+        <li>Diagnose technical issues and improve App performance</li>
+      </ul>
+      <p>We do not use your data for advertising profiling or sell your data to third parties.</p>
+    </div>
+
+    <div class="section">
+      <span class="section-num">05</span>
+      <h2>Third-Party Services</h2>
+      <p>The App is built using React Native / Expo and may interact with third-party services to retrieve game pricing data. These services may have their own privacy policies. We encourage you to review them.</p>
+      <p>We may also use standard analytics or crash reporting tools to monitor App stability. Any such tools are configured to collect only aggregated, non-personally identifiable data.</p>
+    </div>
+
+    <div class="section">
+      <span class="section-num">06</span>
+      <h2>Data Storage &amp; Security</h2>
+      <p>Any data cached by the App is stored locally on your device. We implement reasonable technical measures to protect information within the App. However, no method of electronic storage is 100% secure, and we cannot guarantee absolute security.</p>
+      <p>We do not operate our own servers to store your personal data.</p>
+    </div>
+
+    <div class="section">
+      <span class="section-num">07</span>
+      <h2>Children's Privacy</h2>
+      <p>The App is not directed to children under the age of 13. We do not knowingly collect personal information from children. If you believe a child has provided us with personal information, please contact us and we will take steps to delete such information.</p>
+    </div>
+
+    <div class="section">
+      <span class="section-num">08</span>
+      <h2>Your Rights &amp; Choices</h2>
+      <p>Depending on your location, you may have rights regarding your personal data, including:</p>
+      <ul>
+        <li>The right to access information we hold about you</li>
+        <li>The right to request deletion of your data</li>
+        <li>The right to opt out of notifications at any time through your device settings</li>
+      </ul>
+      <p>To exercise these rights, please contact us at the address below.</p>
+    </div>
+
+    <div class="section">
+      <span class="section-num">09</span>
+      <h2>Changes to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time. We will notify you of significant changes by updating the effective date at the top of this document. We encourage you to review this policy periodically.</p>
+    </div>
+
+    <div class="section">
+      <span class="section-num">10</span>
+      <h2>Contact Us</h2>
+      <p>If you have any questions or concerns about this Privacy Policy, please contact us:</p>
+      <div class="contact-box">
+        <div class="contact-row">
+          <span class="contact-label">Developer</span>
+          <span class="contact-val">Cavemain</span>
+        </div>
+        <div class="contact-row">
+          <span class="contact-label">Email</span>
+          <span class="contact-val"><a href="mailto:cavemain101@gmail.com">cavemain101@gmail.com</a></span>
+        </div>
+        <div class="contact-row">
+          <span class="contact-label">Package</span>
+          <span class="contact-val">app.emergent.gamepricecompare</span>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      NoLootLeftBehind v1.0.4 &nbsp;·&nbsp; Privacy Policy &nbsp;·&nbsp; Effective April 21, 2026 &nbsp;·&nbsp; Developer: Cavemain
+    </footer>
+
+  </div>
+</body>
+</html>
